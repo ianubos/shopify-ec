@@ -1,0 +1,26 @@
+{
+    "title": "Gutenberg | 3D Printer shop",
+    "titleTemplate": "%s - ACME Storefront",
+    "description": "3D printer ecommerce",
+    "openGraph": {
+      "title": "Gutenberg | 3D Printer shop",
+      "description": "3D printer ecommerce",
+      "type": "website",
+      "locale": "ja_JP",
+      "url": "https://shop.gutenberg.co.jp",
+      "site_name": "GUTENBERG 3D printer shop",
+      "images": [
+        {
+          "url": "/shop-image.jpg",
+          "width": 800,
+          "height": 600,
+          "alt": "shop image"
+        }
+      ]
+    },
+    "twitter": {
+      "handle": "@nextjs",
+      "site": "@nextjs",
+      "cardType": "summary_large_image"
+    }
+}
