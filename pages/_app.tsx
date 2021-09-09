@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '@assets/main.css'
 import { FC, useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { Head } from '@components/common'
