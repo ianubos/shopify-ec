@@ -1,3 +1,5 @@
+
+// Not all of these information are necessary. This is for test.
 export const productConnectionFragment = /* GraphQL */ `
   fragment productConnection on ProductConnection {
     pageInfo {
@@ -10,6 +12,8 @@ export const productConnectionFragment = /* GraphQL */ `
         title
         productType
         tags
+        description
+        availableForSale
         vendor
         handle
         priceRange {
@@ -18,7 +22,7 @@ export const productConnectionFragment = /* GraphQL */ `
             currencyCode
           }
         }
-        images(first: 1) {
+        images(first: 5) {
           pageInfo {
             hasNextPage
             hasPreviousPage
@@ -29,6 +33,22 @@ export const productConnectionFragment = /* GraphQL */ `
               altText
               width
               height
+            }
+          }
+        }
+        collections(first: 3) {
+          edges {
+            node {
+              title
+              id
+              handle
+            }
+          }
+        }
+        variants(first: 1) {
+          edges {
+            node {
+              quantityAvailable
             }
           }
         }

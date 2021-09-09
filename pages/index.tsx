@@ -1,15 +1,35 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { getAllProducts } from '@shopify/utils'
+// import type { Product } from '@shopify/types/product'
 
-const Home: NextPage = ({products}) => {
-  console.log(products[0].node)
+export async function getStaticProps(context: any) {
+  const products = await getAllProducts()
+  if (!products) {
+    return {
+      notFound: true,
+    }
+  }
+  return {
+    props: { products },
+  }
+}
+
+// Typescript type problem...
+const Home: NextPage = ({ products }: { products: typeof getStaticProps }) => {
   return (
     <div className='w-full border border-gray-500 h-full'>
       {
         (products && products?.length > 0) && 
-          products.map((product: {}, index: number) => {
-            return <div key={index}>{product?.node.title}</div>
-          })
+          products.map((product: [], index: number) => 
+              <div key={index} className='flex flex-col m-4'>
+                <p>item: {product.title}</p>
+                <p>type: {product.productType}</p>
+                <p>tags: {product.tags}</p>
+                <p>price: {parseInt(product.price)}</p>
+                <p>desc: {product.description}</p>
+                <p>sale: {product.availableForSale ? 'ok' : 'not available'}</p>
+              </div>
+          )
       }
     </div>
   )
@@ -17,14 +37,3 @@ const Home: NextPage = ({products}) => {
 
 export default Home
 
-export async function getStaticProps(context: any) {
-  const data = await getAllProducts()
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-  return {
-    props: { products: data.products.edges ?? [] },
-  }
-}
