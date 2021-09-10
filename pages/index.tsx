@@ -4,6 +4,7 @@ import { getAllProducts } from '@shopify/utils'
 
 export async function getStaticProps(context: any) {
   const products = await getAllProducts()
+  console.log(products[0])
   if (!products) {
     return {
       notFound: true,
@@ -25,7 +26,7 @@ const Home: NextPage = ({ products }: { products: typeof getStaticProps }) => {
                 <p>item: {product.title}</p>
                 <p>type: {product.productType}</p>
                 <p>tags: {product.tags}</p>
-                <p>price: {parseInt(product.price)}</p>
+                <p>price: {product.price.value} {product.price.currencyCode}</p>
                 <p>desc: {product.description}</p>
                 <p>sale: {product.availableForSale ? 'ok' : 'not available'}</p>
               </div>

@@ -2,12 +2,12 @@ import { productConnectionFragment } from './get-all-products-query'
 
 const getCollectionProductsQuery = /* GraphQL */ `
   query getProductsFromCollection(
-    $categoryId: ID!
+    $collectionId: ID!
     $first: Int = 250
     $sortKey: ProductCollectionSortKeys = RELEVANCE
     $reverse: Boolean = false
   ) {
-    node(id: $categoryId) {
+    node(id: $collectionId) {
       id
       ... on Collection {
         products(first: $first, sortKey: $sortKey, reverse: $reverse) {

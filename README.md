@@ -4,7 +4,7 @@
 [Next.js Typescript Cheet Sheet](https://www.saltycrane.com/cheat-sheets/typescript/next.js/latest/)
 
 ## TODOS
-- Check all the functionalities
+- Check all the functionalities of shopify
   - ~~get all products~~
   - ~~get category(collection) and tags~~
   - get products by category(collection)
@@ -22,7 +22,7 @@
 - Shopify Storefront API
 
 ## Citation
-This project depends on [this](https://github.com/vercel/commerce/) vercel's ecommerce template, especially with the part of shopify.
+This project depends on [this vercel's ecommerce template](https://github.com/vercel/commerce/), especially with the part of shopify.
 The template is robust to use, bug free data transfer method. 
 
 ## Structure
@@ -44,7 +44,7 @@ The template is robust to use, bug free data transfer method.
   utilities here
 ```
 
-### Still considering...
-- Do I need to use UI frameworks like Material UI or Ant Design?
-- How to update items information? Nextjs being built at the build time.
-- How to get tags by collection at first?
+## Still remains undecided...
+- Any UI frameworks like Material UI or Ant Design?
+- How to update items information while running the app? Next.js being built at the build time.
+- How to get tags by collection?

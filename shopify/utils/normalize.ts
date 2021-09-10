@@ -15,14 +15,13 @@ const normalizeProductImages = ({ edges }: any) =>
     ...rest,
   }))
 
-const normalizeCollections = ({ edges }: any) => 
-  edges?.map(({ node: { ...args }}) => ({
-      ...args
-  }))
+// const normalizeCollections = ({ edges }: any) => 
+//   edges?.map(({ node: { ...args }}) => ({
+//       ...args
+//   }))
 
 const getTagsofProducts = ({ edges }: any) => edges
   .map(({ node: { tags } }) => {
-    console.log(tags)
     return tags
   })
   .reduce((prev, current) => { // remove same tags
@@ -63,7 +62,9 @@ export function normalizeProduct({
     images: normalizeProductImages(images),
     ...(description && { description }),
     ...(variants && { quantity: variants.edges[0].node.quantityAvailable }),
-    ...(collections && { collections: normalizeCollections(collections) }),
+    ...(collections && { // A Product has just one collection in this project
+      collection: collections.edges.map(({ node: { ...args } }) => normalizeCollection({...args}) )[0] 
+    }), 
     ...rest,
   }
 }
