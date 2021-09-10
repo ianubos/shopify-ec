@@ -1,4 +1,5 @@
 import type { Product } from '../types/product'
+import { sortByAlphabet } from '@utils/sort'
 
 // utilities
 const money = ({ amount, currencyCode }: any) => {
@@ -18,6 +19,21 @@ const normalizeCollections = ({ edges }: any) =>
   edges?.map(({ node: { ...args }}) => ({
       ...args
   }))
+
+const getTagsofProducts = ({ edges }: any) => edges
+  .map(({ node: { tags } }) => {
+    console.log(tags)
+    return tags
+  })
+  .reduce((prev, current) => { // remove same tags
+    if (current === undefined) return prev;
+    current.forEach((tag) => {
+      if (prev.includes(tag)) return;
+      prev.push(tag)
+    })
+    return prev
+  },[])
+
 
 
 // normalizers
@@ -49,6 +65,26 @@ export function normalizeProduct({
     ...(variants && { quantity: variants.edges[0].node.quantityAvailable }),
     ...(collections && { collections: normalizeCollections(collections) }),
     ...rest,
+  }
+}
+
+export function normalizeCollection({
+  id,
+  title,
+  handle,
+  products,
+  image,
+  ...rest
+}: any) {
+  return {
+    id,
+    title,
+    slug: `/${handle}`,
+    ...(image && { image }),
+    ...(products && { tag: sortByAlphabet(
+      getTagsofProducts(products)
+    ) }),
+    ...rest
   }
 }
 
