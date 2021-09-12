@@ -20,7 +20,7 @@ const normalizeProductImages = ({ edges }: any) =>
 //       ...args
 //   }))
 
-const getTagsofProducts = ({ edges }: any) => edges
+const getTagsOfProducts = ({ edges }: any) => edges
   .map(({ node: { tags } }) => {
     return tags
   })
@@ -83,7 +83,7 @@ export function normalizeCollection({
     slug: `/${handle}`,
     ...(image && { image }),
     ...(products && { tag: sortByAlphabet(
-      getTagsofProducts(products)
+      getTagsOfProducts(products)
     ) }),
     ...rest
   }
