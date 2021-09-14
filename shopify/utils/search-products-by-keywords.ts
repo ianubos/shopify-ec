@@ -59,11 +59,12 @@ function productHasKeyword (
 
 // function
 async function seacrhProductsByKeywords(keywords: string[]): Promise<Product[] | void> {
-    /** FIX: remove blanks and re-count the num of letters */
-    /** FIX2: fetch each time when input form is updated -> just once at the first input update */
-    if (!keywords || keywords === [] ||  
-        keywords.join('').replace(/\s/g, '').length < 2 // has 2 letters or more
-    ) { return }
+    /** FIX1: Remove blanks and re-count the num of letters */
+    /** FIX2: Fetch every time input is updated is bad. -> Just once at the first input update */
+    /** FIX2: useContext or Redux or other memorization method? */
+    if (!keywords || keywords === [] || keywords.join('').replace(/\s/g, '').length < 2 ) { // has 2 letters or more 
+        return
+    }
     const allProducts: Product[] = await getAllProducts()
     return allProducts // Return if the product has all the keywords
         .filter(product => 

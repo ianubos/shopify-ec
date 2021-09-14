@@ -2,4 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* @layer components {
+    body {
+        box-sizing: border-box;
+    }
+} */

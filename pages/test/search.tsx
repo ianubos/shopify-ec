@@ -33,20 +33,18 @@ const Test: NextPage = () => {
     }, [])
 
     return (
-        <div className='w-full border border-gray-500 h-full m-8'>
+        <div className='w-full border border-gray-500 h-full'>
         <input
             type="text"
             value={keywords}
             onChange={e => {
                 const inputArray = e.target.value.split(' ').filter(p => p)
-                // console.log(inputArray)
                 setKeywords(e.target.value)
                 fetchProducts(inputArray)
-                }
-            }
+            }}
             className='border-gray-500 border'
         />
-        <h2 className='text-lg underline'>Search By Keyword 'PLA'</h2>
+        <h2 className='text-lg underline'>Search By Keyword {keywords.toString()}</h2>
             {
                 products && products.length > 0 &&
                 products.map((product: {}, index: number) => {
