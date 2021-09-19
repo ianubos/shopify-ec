@@ -4,7 +4,7 @@ import { getAllProductsQuery } from './queries'
 import type { Product } from '../types/product'
 
 async function getAllProducts(): Promise<Product[]> {
-    let allProducts: Product[] = await fetcher({query: getAllProductsQuery})
+    const allProducts: Product[] = await fetcher({query: getAllProductsQuery})
         .then(res => {
             return res.products.edges.map(
                 product => normalizeProduct(product.node)

@@ -1,7 +1,10 @@
 # ECOMMERCE
 
+## Ideas
+- Collection and its descendants... Product Type -> petg, pla, ... and Collection can take its product types.
+
 ## Useful Resources
-[Next.js Typescript Cheet Sheet](https://www.saltycrane.com/cheat-sheets/typescript/next.js/latest/)
+[Next.js Typescript Cheat Sheet](https://www.saltycrane.com/cheat-sheets/typescript/next.js/latest/)
 [useCallback & useRef use case](https://stackoverflow.com/questions/62486028/how-do-i-properly-use-useeffect-for-a-async-fetch-call-with-react-react-hooks-e)
 
 ## TODOS
@@ -9,13 +12,15 @@
   - ~~get all products~~
   - ~~get category(collection) and tags~~
   - ~~get products by category(collection)~~
-  - get tags by category(collection) -> skip
+  - get tags by category(collection) -> skip -> delete
+  - get products by product type sorted by collecction
   - ~~search products by keywords~~
-  - sort products
-  - add & remove product in cart
+  - ~~user login & logout~~
   - checkout to cart
-  - user login & logout
+  - add & remove product in cart
+  - update customer information to buy
   - user storage & history
+  - sort products
 
 ## Checkout
 - Use fetches inside the React component, not getStaticProps so as to treat data in real time.
@@ -65,7 +70,7 @@ The template is robust to use, bug free data transfer method.
 - Operation: How to update items information while running the app? Next.js being built at the build time.
 - Functionality: How to get tags by collection?
 - Use local storage for non-login user & cart data for login user??
-  Cart functionality was added resently??  https://shopify.dev/custom-storefronts/cart
+  Cart functionality was added resentlly??  https://shopify.dev/custom-storefronts/cart
 
 
 ## Errors while developing
@@ -74,3 +79,9 @@ The template is robust to use, bug free data transfer method.
 ChunkLoadError: Loading chunk node_modules_next_dist_client_dev_noop_js failed
 ```
 Try removing .next directory.
+
+## TODOS OF PRODUCTION
+Change customer activation url
+https://shopify.dev/custom-storefronts/customer-accounts#activate-a-customer
+
+

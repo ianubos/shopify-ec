@@ -1,9 +1,11 @@
 import type { NextPage, GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { getAllProducts } from '@shopify/utils'
 import type { Product } from '@shopify/types/product'
+import fs from 'fs'
 
 export async function getStaticProps() {
   const products = await getAllProducts()
+  console.log(products)
   return {
     props: { products },
     revalidate: 60,
