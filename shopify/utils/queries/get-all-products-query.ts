@@ -48,6 +48,7 @@ export const productConnectionFragment = /* GraphQL */ `
         variants(first: 1) {
           edges {
             node {
+              id
               quantityAvailable
             }
           }

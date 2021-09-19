@@ -29,6 +29,7 @@ export type Product = {
     price: ProductPrice
     collections?: ProductCollection[]
     quantity?: number
+    productVariantId?: string
 }
 
 // export type SearchProductsBody = {
@@ -64,23 +65,23 @@ export type ProductTypes = {
 //     }
 // }
 
-export type GetAllProductPathsOperation<
-    T extends ProductTypes = ProductTypes
-    > = {
-    data: { products: Pick<T['product'], 'path'>[] }
-    variables: { first?: number }
-}
+// export type GetAllProductPathsOperation<
+//     T extends ProductTypes = ProductTypes
+//     > = {
+//     data: { products: Pick<T['product'], 'path'>[] }
+//     variables: { first?: number }
+// }
 
-export type GetAllProductsOperation<T extends ProductTypes = ProductTypes> = {
-    data: { products: T['product'][] }
-    variables: {
-        relevance?: 'featured' | 'best_selling' | 'newest'
-        ids?: string[]
-        first?: number
-    }
-}
+// export type GetAllProductsOperation<T extends ProductTypes = ProductTypes> = {
+//     data: { products: T['product'][] }
+//     variables: {
+//         relevance?: 'featured' | 'best_selling' | 'newest'
+//         ids?: string[]
+//         first?: number
+//     }
+// }
 
-export type GetProductOperation<T extends ProductTypes = ProductTypes> = {
-    data: { product?: T['product'] }
-    variables: { path: string; slug?: never } | { path?: never; slug: string }
-}
+// export type GetProductOperation<T extends ProductTypes = ProductTypes> = {
+//     data: { product?: T['product'] }
+//     variables: { path: string; slug?: never } | { path?: never; slug: string }
+// }

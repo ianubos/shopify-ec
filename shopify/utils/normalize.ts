@@ -1,12 +1,13 @@
 import type { Product } from '../types/product'
+import type { Cart } from '../types/cart'
 import { sortByAlphabet } from '@utils/sort'
 
 // utilities
 const money = ({ amount, currencyCode }: any) => {
-    return {
-      value: +amount,
-      currencyCode,
-    }
+  return {
+    value: +amount,
+    currencyCode,
+  }
 }
 
 const normalizeProductImages = ({ edges }: any) =>
@@ -29,10 +30,35 @@ const getTagsOfProducts = ({ edges }: any) => edges
     current.forEach((tag) => {
       if (prev.includes(tag)) return;
       prev.push(tag)
-    })
-    return prev
-  },[])
+  })
+  return prev
+}, [])
 
+const getVariantId = ({ edges }: any) => edges
+  .map(( { node: { id } } ) => {
+    return id ?? null
+  })[0]
+
+  export function normalizeLineItem({
+    id,
+    title,
+    variant,
+    quantity,
+  }: any) {
+    return {
+      id,
+      title,
+      quantity,
+      ...(variant && {
+        variantId: variant.id,
+        price: money(variant.priceV2),
+        image: {
+          ...variant.image,
+          url: variant?.image?.originalSrc,
+        },
+      })
+    }
+  }
 
 
 // normalizers
@@ -65,7 +91,24 @@ export function normalizeProduct({
     ...(collections && { // A Product has just one collection in this project
       collection: collections.edges.map(({ node: { ...args } }) => normalizeCollection({...args}) )[0] 
     }), 
+    variantId: getVariantId(variants),
     ...rest,
+  }
+}
+
+export function normalizeCart({
+  id,
+  webUrl,
+  totalPriceV2,
+  completedAt,
+  lineItems,
+}: any) {
+  return {
+    id,
+    webUrl,
+    ...(totalPriceV2 && { totalPrice: totalPriceV2}),
+    ...(completedAt && { completed: completedAt }),
+    ...(lineItems && { lineItems: lineItems.edges.map(({node}) => normalizeLineItem(node)) }),
   }
 }
 

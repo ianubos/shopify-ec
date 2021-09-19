@@ -22,8 +22,9 @@
   - user storage & history
   - sort products
 
-## Checkout
+## TODOS on Frontend
 - Use fetches inside the React component, not getStaticProps so as to treat data in real time.
+- Load or Create checkout id when the website is loaded because some functions like use-add-item.tsx are created on the fact that the checkout id exists.
 
 ## Cart function
 Shopify cart is not connected to the customer information...

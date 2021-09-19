@@ -26,6 +26,7 @@ const Home: NextPage = ({ products }) => {
                 <p>price: {product.price.value} {product.price.currencyCode}</p>
                 <p>desc: {product.description}</p>
                 <p>sale: {product.availableForSale ? 'ok' : 'not available'}</p>
+                <p>variantId: {product.variantId}</p>
               </div>
           )
       }
