@@ -16,8 +16,8 @@
   - get products by product type sorted by collecction
   - ~~search products by keywords~~
   - ~~user login & logout~~
-  - checkout to cart
-  - add & remove product in cart
+  - ~~create, add & remove product in cart~~
+  - ~~checkout to cart~~
   - update customer information to buy
   - user storage & history
   - sort products

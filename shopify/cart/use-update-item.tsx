@@ -1,33 +1,32 @@
 import fetcher from '../fetcher'
-
 import {
-  checkoutLineItemAddMutation,
   getCheckoutId,
+  checkoutLineItemUpdateMutation,
   throwUserErrors,
 } from '../utils'
 import { normalizeCart } from '@shopify/utils/normalize'
 
-type addInput = {
-    variantId: string
+type updateInput = {
+    id: string,
     quantity: number
 }
 
-async function useAddItem({ variantId, quantity }: addInput) {
+async function useUpdateItem({ id, quantity, variantId }: updateInput) {
     try {
-        console.log(variantId, quantity)
         const checkoutId = getCheckoutId()
         const data = await fetcher({
-            query: checkoutLineItemAddMutation,
+            query: checkoutLineItemUpdateMutation,
             variables: {
                 checkoutId,
                 lineItems: [{
+                    id,
                     variantId,
                     quantity
                 }]
             }
         })
-        console.log('data: ',data)
-        const { checkoutUserErrors, checkout } = data?.checkoutLineItemsAdd
+        console.log(data)
+        const { checkoutUserErrors, checkout } = data?.checkoutLineItemsUpdate
         if (checkoutUserErrors && checkoutUserErrors.length > 0) {
             throwUserErrors(checkoutUserErrors)
         }
@@ -37,5 +36,5 @@ async function useAddItem({ variantId, quantity }: addInput) {
     }
 }
 
-export default useAddItem
 
+export default useUpdateItem
