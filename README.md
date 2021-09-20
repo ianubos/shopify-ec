@@ -18,6 +18,7 @@
   - ~~user login & logout~~
   - ~~create, add & remove product in cart~~
   - ~~checkout to cart~~
+  - ~~associate customer profile with cart~~
   - update customer information to buy
   - user storage & history
   - sort products

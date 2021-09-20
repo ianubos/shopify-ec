@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import { useCart, useAddItem, useRemoveItem, useUpdateItem } from '@shopify/cart'
+import { useAssociateWithCheckout } from '@shopify/customer'
 import { getAllProducts } from '@shopify/utils'
 
 type CartInputType = {
@@ -11,6 +13,8 @@ type CartInputType = {
 
 const Cart: NextPage = () => {
     /** TODO: This page should be turned into react context provider! */
+    const router = useRouter()
+
     const [products, setProducts] = useState([])
     const [items, setItems] = useState([])
     const [cart, setCart] = useState(null)
@@ -74,7 +78,8 @@ const Cart: NextPage = () => {
     }
 
     async function proceedToCheckout() {
-        console.log(cart?.webUrl)
+        const isAssociated = await useAssociateWithCheckout()
+        router.push(cart?.webUrl)
     }
 
     useEffect(() => {
@@ -119,10 +124,10 @@ const Cart: NextPage = () => {
                         )})
                     }
                 </div>
-                <a href={cart?.webUrl}><button 
+                <button 
                     className='bg-gray-900 px-4 text-white m-4 w-56 p-2'
                     onClick={() => proceedToCheckout()}
-                >Proceed To Checkout</button></a>
+                >Proceed To Checkout</button>
             </section>
             {
                 (products && products?.length > 0) && 

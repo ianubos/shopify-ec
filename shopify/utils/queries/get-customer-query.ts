@@ -4,12 +4,19 @@ export const getCustomerQuery = /* GraphQL */ `
       id
       firstName
       lastName
-      displayName
       email
       phone
-      tags
       acceptsMarketing
-      createdAt
+      defaultAddress {
+        address1
+        address2
+        city
+        zip
+        formattedArea
+        formatted
+        country
+        province
+      }
     }
   }
 `
