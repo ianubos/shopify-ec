@@ -7,7 +7,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import type { NextPage, GetStaticPropsContext, InferGetStaticPropsType } from 'next'
-import { searchProductsByKeywords } from '@shopify/utils'
+import { shopifySearchProduct } from '@shopify/product'
 import type { Product } from '@shopify/types/product'
 import { SearchLayout } from '@components/search'
 import { debounce } from '@utils/debounce' 
@@ -16,7 +16,7 @@ const Test: NextPage = () => {
     const [keywords, setKeywords] = useState(['PLA'])
     const [products, setProducts] = useState<Product[]>([])
     const fetchProducts = async function(keywords) {
-        const fetchedProducts = await searchProductsByKeywords(keywords)
+        const fetchedProducts = await shopifySearchProduct(keywords)
         console.log(fetchProducts)
         if (!fetchedProducts) {
             return

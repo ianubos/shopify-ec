@@ -12,8 +12,7 @@
   - ~~get all products~~
   - ~~get category(collection) and tags~~
   - ~~get products by category(collection)~~
-  - get tags by category(collection) -> skip -> delete
-  - get products by product type sorted by collection
+  - ~~get products by product type filtered by collection~~
   - ~~search products by keywords~~
   - ~~user login & logout~~
   - ~~create, add & remove product in cart~~

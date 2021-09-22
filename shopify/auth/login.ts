@@ -7,7 +7,7 @@ type LoginInput = {
     password: string
 }
 
-export default async function useLogin(input: LoginInput) {
+export default async function login(input: LoginInput) {
     try {
         await handleAutomaticLogin(input)
     } catch(err) {

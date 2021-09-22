@@ -1,26 +1,32 @@
 import fetcher from '../fetcher'
 import {
-  checkoutLineItemRemoveMutation,
   getCheckoutId,
+  checkoutLineItemUpdateMutation,
   throwUserErrors,
 } from '../utils'
 import { normalizeCart } from '@shopify/utils/normalize'
 
-type ID = {
-    id: string
+type updateInput = {
+    id: string,
+    quantity: number
 }
 
-async function useRemoveItem({ id }: ID) {
+async function updateItem({ id, quantity, variantId }: updateInput) {
     try {
         const checkoutId = getCheckoutId()
         const data = await fetcher({
-            query: checkoutLineItemRemoveMutation,
+            query: checkoutLineItemUpdateMutation,
             variables: {
                 checkoutId,
-                lineItemIds: [id]
+                lineItems: [{
+                    id,
+                    variantId,
+                    quantity
+                }]
             }
         })
-        const { checkoutUserErrors, checkout } = data?.checkoutLineItemsRemove
+        console.log(data)
+        const { checkoutUserErrors, checkout } = data?.checkoutLineItemsUpdate
         if (checkoutUserErrors && checkoutUserErrors.length > 0) {
             throwUserErrors(checkoutUserErrors)
         }
@@ -30,4 +36,5 @@ async function useRemoveItem({ id }: ID) {
     }
 }
 
-export default useRemoveItem
+
+export default updateItem

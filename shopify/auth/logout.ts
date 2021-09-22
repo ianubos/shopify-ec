@@ -2,7 +2,7 @@ import customerAccessTokenDeleteMutation from '../utils/mutations/customer-acces
 import { getCustomerToken, setCustomerToken } from '../utils/customer-token'
 import fetcher from '../fetcher'
 
-export default async function useLogout() {
+export default async function logout() {
     await fetcher({
         query: customerAccessTokenDeleteMutation,
         variables: {

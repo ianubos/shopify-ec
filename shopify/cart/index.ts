@@ -1,6 +1,6 @@
-export { default as useCart } from './use-cart'
-export { default as useAddItem } from './use-add-item'
-export { default as useRemoveItem } from './use-remove-item'
-export { default as useUpdateItem } from './use-update-item'
+export { default as shopifyCart } from './cart'
+export { default as shopifyAddItem } from './add-item'
+export { default as shopifyRemoveItem } from './remove-item'
+export { default as shopifyUpdateItem } from './update-item'
 
 

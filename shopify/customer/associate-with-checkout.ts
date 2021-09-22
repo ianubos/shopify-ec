@@ -1,7 +1,7 @@
 import { associateCustomerWithCheckoutMutation, getCustomerToken, getCheckoutId, throwUserErrors } from '../utils'
 import fetcher from '../fetcher'
 
-async function useAssociateWithCheckout() {
+async function associateWithCheckout() {
     const customerAccessToken = getCustomerToken()
     const checkoutId = getCheckoutId()
     if (!customerAccessToken || !checkoutId) {
@@ -23,4 +23,4 @@ async function useAssociateWithCheckout() {
     }
 }
 
-export default useAssociateWithCheckout
+export default associateWithCheckout

@@ -16,7 +16,7 @@ type SignUpInput = {
 //     code?: string
 // }
 
-export default async function useSignup(input: SignUpInput) {
+export default async function signup(input: SignUpInput) {
     try {
         await fetcher({
             query: customerCreateMutation,

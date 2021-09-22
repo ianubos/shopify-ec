@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { useState, useEffect } from 'react' 
 // import { getCollections, getProductsByCollection } from '@shopify/utils'
 import type { Product, ProductCollection as Collection } from '@shopify/types/product'
-import { useCollection, useCollectionProduct } from '@shopify/collection'
+import { shopifyCollection, shopifyCollectionProducts } from '@shopify/collection'
 
 interface Props {
   collections?: Collection[],
@@ -14,13 +14,13 @@ const Test: NextPage<Props> = () => {
   const [collections, setCollections] = useState(null)
 
   async function getCollections() {
-    const fetched = await useCollection()
+    const fetched = await shopifyCollection()
     setCollections(fetched)
     return fetched
   }
 
   async function getProductsByCollection(col_id) {
-    const fetched = await useCollectionProduct(col_id)
+    const fetched = await shopifyCollectionProducts(col_id)
     setProducts(fetched)
     return fetched
   }

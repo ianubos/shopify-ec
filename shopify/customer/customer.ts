@@ -1,7 +1,7 @@
 import { getCustomerQuery, getCustomerToken } from '../utils'
 import fetcher from '../fetcher'
 
-async function useCustomer() {
+async function customer() {
     const customerAccessToken = getCustomerToken()
     if (customerAccessToken) {
         const data = await fetcher({ 
@@ -15,4 +15,4 @@ async function useCustomer() {
     return null
 }
 
-export default useCustomer
+export default customer

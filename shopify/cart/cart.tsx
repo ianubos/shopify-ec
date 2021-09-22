@@ -4,7 +4,7 @@ import getCheckoutQuery from '../utils/queries/get-checkout-query'
 import { normalizeCart } from '../utils/normalize'
 import { throwUserErrors } from '../utils'
 
-async function useCart(id?: string) {
+async function cart(id?: string) {
     /** Load when the website is loaded! So, use it inside _app or _document. */
     try {
         const checkoutId = getCheckoutId(id ?? undefined)
@@ -35,5 +35,5 @@ async function useCart(id?: string) {
     }
 }
 
-export default useCart
+export default cart
 

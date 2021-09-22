@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
 import {  } from '@shopify/utils'
-import { useCustomer } from '@shopify/customer'
+import { shopifyCustomer } from '@shopify/customer'
 
 type Profile = {
   firstName: string
@@ -30,7 +30,7 @@ const initialState = {
 const Test: NextPage = () => {
   const [profile, setProfile] = useState(initialState)
   async function getProfile() {
-    const data = await useCustomer()
+    const data = await shopifyCustomer()
     console.log(data)
     setProfile({
         ...profile,

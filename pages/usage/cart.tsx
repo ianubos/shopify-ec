@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
-import { useCart, useAddItem, useRemoveItem, useUpdateItem } from '@shopify/cart'
-import { useAssociateWithCheckout } from '@shopify/customer'
-import { getAllProducts } from '@shopify/utils'
-
+import { shopifyCart, shopifyAddItem, shopifyRemoveItem, shopifyUpdateItem } from '@shopify/cart'
+import { shopifyAssociateWithCheckout } from '@shopify/customer'
+import { shopifyAllProducts } from '@shopify/product'
 import { getCustomerToken } from '@shopify/utils'
 
 type CartInputType = {
@@ -22,12 +21,12 @@ const Cart: NextPage = () => {
     const [cart, setCart] = useState(null)
 
     async function getProducts() {
-        const fetchedProducts = await getAllProducts()
+        const fetchedProducts = await shopifyAllProducts()
         setProducts(fetchedProducts)
     }
 
     async function getCart() {
-        const data = await useCart()
+        const data = await shopifyCart()
         console.log('cart data:', data)
         setCart({
             id: data?.id,
@@ -38,7 +37,7 @@ const Cart: NextPage = () => {
 
     async function addToCart({ variantId, quantity }: CartInputType) {
         console.log('addToCart quantity:', quantity)
-        const newCart = await useAddItem({
+        const newCart = await shopifyAddItem({
             variantId,
             quantity
         })
@@ -49,12 +48,12 @@ const Cart: NextPage = () => {
         if (quantity <= 1) {
             console.log('remove!!')
             // await removeFromCart({id})
-            const newCart = await useRemoveItem({
+            const newCart = await shopifyRemoveItem({
                 id,
             })
             setItems(newCart.lineItems)
         } else {
-            const newCart = await useUpdateItem({
+            const newCart = await shopifyUpdateItem({
                 id,
                 variantId,
                 quantity: quantity - 1
@@ -66,7 +65,7 @@ const Cart: NextPage = () => {
     }
 
     async function updateItemInCart({ id, quantity }: CartInputType) {
-        const newCart = await useUpdateItem({
+        const newCart = await shopifyUpdateItem({
             id,
             quantity
         })
@@ -74,7 +73,7 @@ const Cart: NextPage = () => {
     }
 
     async function removeFromCart({ id }: CartInputType) {
-        const newCart = await useRemoveItem({
+        const newCart = await shopifyRemoveItem({
             id,
         })
         setItems(newCart.lineItems)
@@ -82,7 +81,7 @@ const Cart: NextPage = () => {
 
     async function proceedToCheckout() {
         /** TODO: Loading Icon should appear */
-        const isAssociated = await useAssociateWithCheckout()
+        const isAssociated = await shopifyAssociateWithCheckout()
         router.push(cart?.webUrl)
     }
 
