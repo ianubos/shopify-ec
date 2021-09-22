@@ -14,7 +14,8 @@ const Test: NextPage = () => {
             alert('Email or password are missing...')
             return
         }
-        await useSignUp(userInput)
+        const created = await useSignUp(userInput)
+        alert(created ? "Account created!" : "Failed...")
     }
     return (
         <div className='w-full border border-gray-500 h-full'>

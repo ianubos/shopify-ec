@@ -1,4 +1,5 @@
 /** login & logout functions are ready to use */
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
 import { useLogin, useLogout } from '@shopify/auth'
@@ -69,6 +70,9 @@ const Test: NextPage = () => {
         </form>
 
         <button onClick={logout} className='p-2 m-4 border border-gray-400 '>Logout</button>
+        <Link href='/test/cart'>
+            <a className='p-2 m-4 border border-gray-400'>Cart</a>
+        </Link>
 
         <div className='py-5 flex flex-col gap-4 text-blue-600'>
             <h3 className='font-bold'>User:</h3>

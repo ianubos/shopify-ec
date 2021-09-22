@@ -8,20 +8,24 @@
 [useCallback & useRef use case](https://stackoverflow.com/questions/62486028/how-do-i-properly-use-useeffect-for-a-async-fetch-call-with-react-react-hooks-e)
 
 ## TODOS
-- Enable all the functionalities of shopify
+- Enable all the shopify functionalities
   - ~~get all products~~
   - ~~get category(collection) and tags~~
   - ~~get products by category(collection)~~
   - get tags by category(collection) -> skip -> delete
-  - get products by product type sorted by collecction
+  - get products by product type sorted by collection
   - ~~search products by keywords~~
   - ~~user login & logout~~
   - ~~create, add & remove product in cart~~
   - ~~checkout to cart~~
   - ~~associate customer profile with cart~~
-  - update customer information to buy
+  - ~~update customer information to buy~~ -> Cannot auto login at checkout.
   - user storage & history
   - sort products
+- Setup these functionalities to use on Frontend
+  - Serve React Context API & create Provider
+- Create document
+  - Create image the relationship between the consts & use-** functions
 
 ## TODOS on Frontend
 - Use fetches inside the React component, not getStaticProps so as to treat data in real time.

@@ -5,6 +5,8 @@ import { useCart, useAddItem, useRemoveItem, useUpdateItem } from '@shopify/cart
 import { useAssociateWithCheckout } from '@shopify/customer'
 import { getAllProducts } from '@shopify/utils'
 
+import { getCustomerToken } from '@shopify/utils'
+
 type CartInputType = {
     id?: string,
     variantId?: string,
@@ -26,6 +28,7 @@ const Cart: NextPage = () => {
 
     async function getCart() {
         const data = await useCart()
+        console.log('cart data:', data)
         setCart({
             id: data?.id,
             webUrl: data?.webUrl
@@ -78,6 +81,7 @@ const Cart: NextPage = () => {
     }
 
     async function proceedToCheckout() {
+        /** TODO: Loading Icon should appear */
         const isAssociated = await useAssociateWithCheckout()
         router.push(cart?.webUrl)
     }

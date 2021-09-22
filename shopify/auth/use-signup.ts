@@ -28,6 +28,7 @@ export default async function useSignup(input: SignUpInput) {
             throwUserErrors(customerCreate?.customerUserErrors)
             if (customerCreate.customer) {
                 await handleAutomaticLogin(input)
+                return true
             }
         })
     } catch(err) {

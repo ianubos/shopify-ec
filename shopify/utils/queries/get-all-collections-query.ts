@@ -1,3 +1,5 @@
+import { productConnectionFragment } from "./search-products-query"
+
 const getSiteCollectionsQuery = /* GraphQL */ `
   query getSiteCollections($first: Int = 10) {
     collections(first: $first) {
@@ -9,17 +11,17 @@ const getSiteCollectionsQuery = /* GraphQL */ `
           image {
             originalSrc
             altText
+            height
+            width
           }
           products(first: 250) {
-            edges {
-                node {
-                    tags
-                }
-            }
+            ...productConnection
           }
         }
       }
     }
   }
+
+  ${productConnectionFragment}
 `
 export default getSiteCollectionsQuery

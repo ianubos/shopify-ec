@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
 import {  } from '@shopify/utils'
@@ -30,6 +31,9 @@ const Test: NextPage = () => {
             </tbody>
           </table>
         </div>
+        <Link href='/test/edit'>
+          <a className='px-4 py-2 bg-gray-900 text-white'>Edit</a>
+        </Link>
     </div>
     </>
   )
