@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect, FC, useCallback, useMemo, useRef } from "react"
+import { createContext, useContext, useState, useEffect, FC, useCallback, useMemo, useRef, useReducer } from "react"
+import { initialProfile, reducer } from './reducer'
 
 import { shopifyCustomer } from '@shopify/customer'
 import { shopifyLogin, shopifyLogout } from '@shopify/auth'
@@ -14,34 +15,6 @@ export const useCustomerContext = () => useContext(CustomerContext);
 type UserLogin = {
     email: string
     password: string
-}
-
-class UserState {
-    profile: any
-    constructor(profile) {
-        this.profile = profile 
-            // ?? async () => await shopifyCustomer()
-            ?? null
-    }
-
-    isLogin() {
-        return this.profile !== null && this.profile !== undefined
-    }
-    
-    async fetchData() {
-        await shopifyCustomer()
-            .then(data => this.profile = data)
-    }
-
-    async login(userLogin: UserLogin) {
-        await shopifyLogin(userLogin)
-        await this.fetchData()
-    }
-
-    async logout() {
-        await shopifyLogout()
-        this.profile = null
-    }
 }
 
 // Wrap the app and provide the data layer to every component
@@ -80,23 +53,22 @@ export const CustomerProvider: FC = ({ children }) => {
     //         getProfile()
     //     }
     // }, [profile, isLoading])
-    const [profile, setProfile] = useState()
+    // const user = new UserState(undefined)
     const isLoading = useRef(true)
+    const [profile, setProfile] = useState(null)
     async function getProfile(): Promise<void> {
         const data = await shopifyCustomer()
-        const user = new UserState(data)
-        setProfile(user)
+        setProfile(data)
         isLoading.current = false
     }
 
     useEffect(() => {
-        if (isLoading) {
+        if (isLoading.current) {
             getProfile()
         }
-    }, [isLoading, profile])
-
+    }, [])
     return (
-        <CustomerContext.Provider value={profile}>
+        <CustomerContext.Provider value={useReducer(reducer, { profile: profile })}>
             {children}
         </CustomerContext.Provider>
     )

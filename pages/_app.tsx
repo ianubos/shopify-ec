@@ -3,7 +3,7 @@ import { FC, useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { Head } from '@components/common'
 
-import { CustomerProvider } from '../contexts/customer'
+import { CustomerProvider, CollectionProvider } from '../contexts'
 
 const Noop: FC = ({ children }) => <>{children}</>
 
@@ -18,9 +18,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head />
       <CustomerProvider>
+        <CollectionProvider>
         <Layout pageProps={pageProps}>
           <Component {...pageProps} />
         </Layout>
+        </CollectionProvider>
       </CustomerProvider>
     </>
   )

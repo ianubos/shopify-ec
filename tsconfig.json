@@ -21,6 +21,7 @@
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
       "@shopify/*": ["shopify/*"],
+      "@contexts/*": ["contexts/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
