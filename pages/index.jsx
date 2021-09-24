@@ -1,5 +1,7 @@
-import { getAllProducts } from '@shopify/utils'
+import { shopifyAllProducts } from '@shopify/product'
 import { shopifyCollection } from '@shopify/collection'
+
+// import { Layout } from '@components/common'
 
 const Home = (
   { products, collections }
@@ -11,9 +13,11 @@ const Home = (
   )
 }
 
+// Home.Layout = Layout
+
 /** Product Data */
 export async function getStaticProps() {
-  const products = await getAllProducts()
+  const products = await shopifyAllProducts()
   const collections = await shopifyCollection()
   return {
     props: { 

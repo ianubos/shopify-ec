@@ -55,6 +55,7 @@ const Test: NextPage<Props> = () => {
                 <p>item: {product.title}</p>
                 <p>type: {product.productType}</p>
                 <p>tags: {product.tags}</p>
+                <p>handle: {product.handle}</p>
                 <p>price: {product.price.value} {product.price.currencyCode}</p>
                 <p>desc: {product.description}</p>
                 <p>sale: {product.availableForSale ? 'ok' : 'not available'}</p>

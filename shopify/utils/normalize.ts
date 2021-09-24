@@ -81,6 +81,7 @@ export function normalizeProduct({
     title,
     vendor,
     tags,
+    handle,
     productType,
     path: `/${handle}`,
     slug: handle?.replace(/^\/+|\/+$/g, ''),
