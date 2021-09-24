@@ -1,0 +1,9 @@
+.contents {
+    position: relative;
+    padding-top: 135px;
+}
+
+.content_box {
+    display: flex;
+    margin: 100px 0;
+}

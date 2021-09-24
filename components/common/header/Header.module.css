@@ -1,0 +1,22 @@
+.header {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    position: fixed;
+    box-shadow: 0 5px 10px  rgba(57, 58, 61, 0.25);
+    z-index: 500;
+}
+
+.header_row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 80px;
+    line-height: 80px;
+    gap: 60px;
+}
+
+.header_right {
+    display: flex;
+    gap: 20px;
+}

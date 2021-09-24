@@ -1,0 +1,9 @@
+.logo_container {
+    display: flex;
+}
+
+.logo {
+    color: #333;
+    font-size: 32px;
+    font-weight: 700;
+}

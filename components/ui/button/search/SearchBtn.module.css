@@ -1,0 +1,16 @@
+.search_btn {
+    display: flex;
+    align-items: center;
+    width: 80px;
+    background-color: #ccc;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.search_btn img {
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+}
