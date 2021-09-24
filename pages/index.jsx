@@ -1,5 +1,6 @@
 import { shopifyAllProducts } from '@shopify/product'
 import { shopifyCollection } from '@shopify/collection'
+import undefToNull from '@utils/undefToNullInObj'
 
 // import { Layout } from '@components/common'
 
@@ -21,8 +22,8 @@ export async function getStaticProps() {
   const collections = await shopifyCollection()
   return {
     props: { 
-      products, 
-      collections
+      products: products.map(p => undefToNull(p)), 
+      collections: collections.map(c => undefToNull(c)),
     },
     revalidate: 60,
   }
