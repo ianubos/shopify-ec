@@ -1,4 +1,4 @@
-import { getAllProducts } from '@shopify/utils'
+import { shopifyAllProducts } from '@shopify/product'
 import { shopifyCollection } from '@shopify/collection'
 import { Layout } from '../components/common/layout'
 import { Contents } from '../components/common/contents'
@@ -22,14 +22,16 @@ const Home = (
   )
 }
 
+// Home.Layout = Layout
+
 /** Product Data */
 export async function getStaticProps() {
-  const products = await getAllProducts()
+  const products = await shopifyAllProducts()
   const collections = await shopifyCollection()
   return {
     props: { 
-      products, 
-      collections
+      products: products.map(p => undefToNull(p)), 
+      collections: collections.map(c => undefToNull(c)),
     },
     revalidate: 60,
   }

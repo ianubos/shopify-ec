@@ -1,13 +1,3 @@
-/**
- * collection: {
- *  id
- *  title
- *  slug
- *  image
- *  tag
- * }
- */
-
  import fetcher from '../fetcher'
  import { normalizeProduct } from './normalize'
  import { getCollectionProductsQuery } from './queries' 
