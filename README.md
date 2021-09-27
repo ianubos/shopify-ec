@@ -22,7 +22,7 @@
   - user storage & history
   - sort products
 - Setup these functionalities to use on Frontend
-  - Serve React Context API & create Provider
+  - Serve React Context API & create Provider -> No need to use Context API??
 - Create document
   - Create image the relationship between the consts & use-** functions
 

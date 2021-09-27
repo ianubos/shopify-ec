@@ -11,7 +11,6 @@ const Test: NextPage = () => {
     async function fetchCustomer() {
         await shopifyCustomer()
             .then(data => {
-                console.log(data)
                 setInfo(data)
             })
     }
