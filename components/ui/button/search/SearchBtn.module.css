@@ -1,7 +1,7 @@
 .search_btn {
     display: flex;
     align-items: center;
-    width: 80px;
+    width: 65px;
     background-color: #ccc;
     border-top-right-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
@@ -12,5 +12,15 @@
 .search_btn img {
     width: 30px;
     height: 30px;
-    margin-left: 8px;
+    margin-left: 9px;
+}
+
+@media screen and (min-width: 768px) {
+    .search_btn {
+        width: 75px;
+    }
+
+    .search_btn img {
+        margin-left: 14px;
+    }
 }

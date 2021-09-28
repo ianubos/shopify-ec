@@ -1,22 +1,24 @@
 import { shopifyAllProducts } from '@shopify/product'
 import { shopifyCollection } from '@shopify/collection'
-import { Layout } from '../components/common/layout'
-import { Contents } from '../components/common/contents'
+import undefToNull from '@utils/undefToNullInObj'
+import Layout from '../components/common/layout/Layout'
+import Contents from '../components/common/contents/Contents'
+
+// import { Layout } from '@components/common'
 
 const Home = (
   { products, collections }
 ) => {
-  //products データ
   console.log(products)
+  console.log(collections)
   return (
     <>
     {/* Frontend */}
-    <Layout>
-
+    <Layout collections={collections}>
       <Contents 
-          products={products}    
+        products={products}
+        collections={collections}
       />
-      {/* <div style={{height: '2000px'}}></div> */}
     </Layout>
     </>
   )

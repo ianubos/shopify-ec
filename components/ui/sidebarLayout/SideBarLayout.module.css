@@ -1,21 +1,18 @@
 .side_bar {
-    width: 25%;
-    margin: 30px 0;
-    border-radius: 10px;
-    background-color: #fcfcfc;
-    box-shadow: 0 0 5px 0 rgb(212, 212, 212);
+    position: relative;
+    width: 100%;
+    height: auto;
 }
 
 .side_bar_nav {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 18px 27px;
+    padding: 0;
 }
 
 .side_bar_heading {
-    margin: 0 0 15px 0;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 800;
 }
 
@@ -65,8 +62,14 @@
 
 .side_bar_nav label span {
     font-size: 16px;
-    margin-bottom: 5px;
 }
 
+@media screen and (min-width: 1024px) {
+    .side_bar_nav {
+        padding: 18px 27px;
+    }
 
-
+    .side_bar_nav label span {
+        margin-bottom: 5px;
+    }
+}

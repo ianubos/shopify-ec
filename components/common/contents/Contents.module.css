@@ -1,9 +1,43 @@
 .contents {
+    display: flex;
     position: relative;
-    padding-top: 135px;
+    padding-top: 150px;
+    margin-bottom: 100px;
 }
 
 .content_box {
     display: flex;
-    margin: 100px 0;
+}
+
+.content_box_aside {
+    display: none;
+    width: 25%;
+    margin: 25px 0;
+    border-radius: 10px;
+    background-color: #fcfcfc;
+    box-shadow: 0 0 5px 0 rgb(212, 212, 212);
+}
+
+@media screen and (min-width: 1024px) {
+    .contents {
+        padding-top: 235px;
+    }
+
+    .content_box_aside {
+        display: block;
+    }
+}
+
+
+
+#drawer_default {
+    display: block;
+}
+
+.hamburger_menu_click {
+    display: block;
+}
+
+.drawer_open {
+    left: 0;
 }

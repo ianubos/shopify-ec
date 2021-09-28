@@ -8,13 +8,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    background-color: #ccc;
-    border-radius: 1.5rem;
+    width: 45px;
+    height: 45px;
 }
 
 .userNav_icon img {
-    width: 35px;
-    height: auto;
+    width: 37px;
+}
+
+@media screen and (min-width: 768px) {
+    .userNav_icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .userNav_icon img {
+        width: 40px;
+    }   
+}
+
+@media screen and (min-width: 1024px) {
+    .userNav_icon img {
+        width: 45px;
+    }
 }
