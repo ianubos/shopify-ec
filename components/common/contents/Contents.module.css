@@ -29,15 +29,19 @@
 }
 
 
-
-#drawer_default {
+.drawer_open {
     display: block;
+    transition: all 0.8s;
+}
+
+.drawer_default {
+    display: none;
 }
 
 .hamburger_menu_click {
     display: block;
 }
 
-.drawer_open {
-    left: 0;
+.scroll_stop {
+    overflow: hidden;
 }

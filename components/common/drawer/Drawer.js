@@ -17,13 +17,17 @@ const Drawer = React.forwardRef((props, ref) => {
         }
     ]
     return (
+        // <div className={styles.drawer_box} ref={ref}>
         <div className={styles.drawer_box} ref={ref}>
             <div className={styles.drawer}>
                 {components.map((component) => (
-                    <div className={styles.drawer_contents} key={component.id.toString()}>
-                        <h5 className={styles.contents_headding}>{component.title}</h5> 
-                        {component.childComponent}
-                    </div> 
+                    <>
+                        <div className={styles.drawer_contents} key={component.id.toString()}>
+                            <h5 className={styles.contents_headding}>{component.title}</h5> 
+                            {component.childComponent}
+                        </div>
+                        <div className={styles.drawer_container_bottom} />
+                    </>
                 ))}
             </div>
             <div className={styles.drawer_container} onClick={props?.close} />

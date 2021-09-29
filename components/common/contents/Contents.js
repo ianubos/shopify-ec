@@ -12,8 +12,10 @@ const Contents = ({products, collections}) => {
 
     const handleClickDrawerToggle = () => {
         const drawer = drawerRef.current
-        const drawerBoolean = drawer.toggleAttribute('id')
-        if (drawerBoolean === true) drawer.setAttribute('id', styles.drawer_default)
+        const body = document.body
+        drawer.classList.toggle(styles.drawer_open)
+        drawer.classList.toggle(styles.drawer_default)
+        body.classList.toggle(styles.scroll_stop)
     }
 
     const handleClickDrawerOpen = () => {
@@ -21,8 +23,7 @@ const Contents = ({products, collections}) => {
     }
 
     useLayoutEffect(() => {
-        console.log('drawerのテスト')
-        console.log(drawerRef.current)
+        drawerRef.current.classList.add(styles.drawer_default)
     }, [])
 
     return (

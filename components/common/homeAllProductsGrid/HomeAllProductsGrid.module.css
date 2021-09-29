@@ -14,13 +14,12 @@
 }
 
 .productsGrid_item {
-    /* display: flex;
-    flex-direction: column; */
     padding: 15px;
 }
 
 .productsGrid_title {
     margin: 0 0 10px 0;
+    font-size: 18px;
     font-weight: bold;
 }
 

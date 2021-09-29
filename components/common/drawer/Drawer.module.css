@@ -1,5 +1,5 @@
 .drawer_box {
-    display: none;
+    /* display: none; */
     transition: all 1.0s;
 }
 
@@ -13,6 +13,7 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.7); 
     z-index: 800;
+    transition: all 0.8s;
 }
 
 .drawer {
@@ -28,7 +29,14 @@
 
 .drawer_contents {
     padding: 43px 30px;
-    border-bottom: 2px solid #aaa;
+}
+
+.drawer_container_bottom {
+    width: 80%;
+    height: 1.5px;
+    border-radius: 1.5rem;
+    background-color: #bbb;
+    margin: 0 30px;
 }
 
 .contents_headding {
