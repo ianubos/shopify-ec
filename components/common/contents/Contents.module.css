@@ -1,7 +1,7 @@
 .contents {
     display: flex;
     position: relative;
-    padding-top: 150px;
+    padding-top: 100px;
     margin-bottom: 100px;
 }
 
@@ -20,7 +20,7 @@
 
 @media screen and (min-width: 1024px) {
     .contents {
-        padding-top: 235px;
+        padding-top: 150px;
     }
 
     .content_box_aside {

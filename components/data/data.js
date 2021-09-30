@@ -17,6 +17,21 @@ const globalNav = [
     },
 ]
 
+const carousels = [
+  {
+    path: 'Carousel_image_sample_1.jpg'
+  },
+  {
+    path: 'Carousel_image_sample_2.jpg'
+  },
+  {
+    path: 'Carousel_image_sample_3.jpg'
+  },
+  {
+    path: 'Carousel_image_sample_4.jpg'
+  },
+]
+
 const siedebar = ['TAG-1', 'TAG-2', 'TAG-3', 'TAG-4', 'TAG-5',
                   'TAG-6', 'TAG-7', 'TAG-8', 'TAG-9', 'TAG-10',
                   'TAG-11', 'TAG-12', 'TAG-13', 'TAG-14', 'TAG-15', 'TAG-16', 'TAG-17', 'TAG-18']
@@ -116,4 +131,4 @@ const homeAllProductsGrid = [
     }
   ]
 
-export { globalNav, siedebar, homeAllProductsGrid }
+export { globalNav, carousels, siedebar, homeAllProductsGrid }

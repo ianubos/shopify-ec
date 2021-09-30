@@ -8,7 +8,7 @@ import styles from './Header.module.css'
 
 const Header = ({collections}) => {
     return (
-        <header className={styles.header}>
+        <header className={styles.header} id="header">
             <Container>
                 <div className={styles.header_row}>
                     <Logo />

@@ -3,6 +3,7 @@ import { shopifyCollection } from '@shopify/collection'
 import undefToNull from '@utils/undefToNullInObj'
 import Layout from '../components/common/layout/Layout'
 import Contents from '../components/common/contents/Contents'
+import Carousel from '../components/common/carousel/Carousel'
 
 // import { Layout } from '@components/common'
 
@@ -15,6 +16,7 @@ const Home = (
     <>
     {/* Frontend */}
     <Layout collections={collections}>
+      <Carousel />
       <Contents 
         products={products}
         collections={collections}

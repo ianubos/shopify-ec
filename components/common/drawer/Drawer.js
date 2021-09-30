@@ -30,7 +30,7 @@ const Drawer = React.forwardRef((props, ref) => {
                     </>
                 ))}
             </div>
-            <div className={styles.drawer_container} onClick={props?.close} />
+            <div className={styles.drawer_container} onClick={props.close} />
         </div>
     )
 })
