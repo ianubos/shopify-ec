@@ -1,10 +1,7 @@
 import styles from './Contents.module.css'
 import React, { useRef, useState, useLayoutEffect } from 'react'
-import { Drawer } from '../drawer'
-import { HomeAllProductsGrid } from '../homeAllProductsGrid'
-import { SideBarLayout } from '../../ui/sidebarLayout'
-import { HamburgerMenu } from '../../ui/button/hamburgerMenu'
-import { Container } from '../../ui/container'
+import { Drawer, HomeAllProductsGrid } from '@components/common'
+import { Container, SideBarLayout, HamburgerMenu } from '@components/ui'
 
 const Contents = ({products, collections}) => {
     const drawerRef = useRef(null)

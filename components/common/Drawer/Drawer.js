@@ -1,7 +1,6 @@
 import styles from './Drawer.module.css'
 import React from 'react'
-import { SideBarLayout } from '../../ui/sidebarLayout'
-import { NavBar } from '../../ui/navBar'
+import { SideBarLayout, NavBar } from '@components/ui'
 
 const Drawer = React.forwardRef((props, ref) => {
     const components = [

@@ -1,4 +1,4 @@
-import { siedebar } from '../../data/data'
+import { siedebar } from '@assets/data'
 import styles from './SideBarLayout.module.css'
 
 const SideBarLayout = () => {

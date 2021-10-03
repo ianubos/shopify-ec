@@ -1,9 +1,7 @@
-import { Container } from "../../ui/container"
-import { Logo } from "../../ui/logo"
-import { SearchBar } from "./searchbar"
-import { UserNav } from "./userNav"
-import { Cart } from "./cart"
-import { NavBar } from "../../ui/navBar"
+import { Container, Logo, NavBar } from "@components/ui"
+import { SearchBar } from "./SearchBar"
+import { UserNav } from "./UserNav"
+import { Cart } from "./Cart"
 import styles from './Header.module.css'
 
 const Header = ({collections}) => {

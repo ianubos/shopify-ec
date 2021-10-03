@@ -1,5 +1,4 @@
-import { Container } from '../../ui/container'
-import { Logo } from '../../ui/logo'
+import { Container, Logo } from '@components/ui'
 import styles from './Footer.module.css'
 
 const Fotoer = () => {

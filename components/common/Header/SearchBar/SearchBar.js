@@ -1,4 +1,4 @@
-import { SearchBtn } from '../../../ui/button/search'
+import { SearchBtn } from '@components/ui'
 import styles from './SearchBar.module.css'
 
 const SearchBar = () => {
