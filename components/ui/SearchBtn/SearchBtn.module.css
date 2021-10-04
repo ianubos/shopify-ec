@@ -1,0 +1,26 @@
+.search_btn {
+    display: flex;
+    align-items: center;
+    width: 65px;
+    background-color: #ccc;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.search_btn img {
+    width: 30px;
+    height: 30px;
+    margin-left: 9px;
+}
+
+@media screen and (min-width: 768px) {
+    .search_btn {
+        width: 75px;
+    }
+
+    .search_btn img {
+        margin-left: 14px;
+    }
+}

@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang='ja'>
         <Head />
-        <body className="loading p-4 box-border">
+        <body className="loading">
           <Main />
           <NextScript />
         </body>

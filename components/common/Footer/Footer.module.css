@@ -1,0 +1,11 @@
+.footer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border: 4px solid #eee;
+}
+
+.footer_row {
+    display: flex;
+    padding-top: 50px;
+}

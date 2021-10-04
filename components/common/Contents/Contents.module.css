@@ -1,0 +1,47 @@
+.contents {
+    display: flex;
+    position: relative;
+    padding-top: 100px;
+    margin-bottom: 100px;
+}
+
+.content_box {
+    display: flex;
+}
+
+.content_box_aside {
+    display: none;
+    width: 25%;
+    margin: 25px 0;
+    border-radius: 10px;
+    background-color: #fcfcfc;
+    box-shadow: 0 0 5px 0 rgb(212, 212, 212);
+}
+
+@media screen and (min-width: 1024px) {
+    .contents {
+        padding-top: 150px;
+    }
+
+    .content_box_aside {
+        display: block;
+    }
+}
+
+
+.drawer_open {
+    display: block;
+    transition: all 0.8s;
+}
+
+.drawer_default {
+    display: none;
+}
+
+.hamburger_menu_click {
+    display: block;
+}
+
+.scroll_stop {
+    overflow: hidden;
+}

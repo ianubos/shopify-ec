@@ -1,0 +1,75 @@
+.side_bar {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.side_bar_nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+}
+
+.side_bar_heading {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.side_bar_nav input[type="checkbox"] {
+    display: none;
+}
+
+.side_bar_nav input[type="checkbox"]:checked + label::before {
+    background-color: #333;
+}
+
+.side_bar_nav input[type="checkbox"]:checked + label::after {
+    display: block;
+}
+
+.side_bar_nav label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.side_bar_nav label::before, .side_bar_nav label::after {
+    content: '';
+    display: inline-block;
+}
+
+.side_bar_nav label::before {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #333;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.side_bar_nav label::after {
+    display: none;
+    position: absolute;
+    margin: 0 0 4px 5px;
+    width: 4px;
+    height: 8px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.side_bar_nav label span {
+    font-size: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+    .side_bar_nav {
+        padding: 18px 27px;
+    }
+
+    .side_bar_nav label span {
+        margin-bottom: 5px;
+    }
+}

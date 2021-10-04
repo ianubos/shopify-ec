@@ -1,0 +1,105 @@
+.images_container {
+    width: 90%;
+    height: auto;
+    margin: 120px 0 0 0;
+    padding: 0;
+}
+
+.images {
+    width: 100%;
+    height: 300px;
+    margin: 0;
+}
+
+.my_dots {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    width: 240px;
+    height: 40px;
+    border-radius: 1.5rem;
+    background-color: rgba(201, 201, 201, 0.4);
+    margin: auto;
+    text-align: center;
+}
+
+.my_dots li {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 40px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.my_dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.my_dots li button:hover,
+.my_dots li button:focus {
+    outline: none;
+}
+
+.my_dots li button:hover::before,
+.my_dots li button:focus::before {
+    opacity: 0.9;
+}
+
+.my_dots li button:before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    content: '•';
+    font-size: 20px;
+    text-align: center;
+    opacity: .3;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.my_dots li.slick-active button:before {
+    opacity: .75;
+    color: black;
+}
+
+@media screen and (min-width: 768px) {
+    .images_container {
+        margin-top: 80px;
+    }
+
+    .images {
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .images_container {
+        margin-top: 135px;
+    }
+
+    .images {
+        height: 500px;
+    }
+}

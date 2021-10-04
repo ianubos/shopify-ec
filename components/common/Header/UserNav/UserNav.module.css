@@ -1,0 +1,34 @@
+.userNav_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userNav_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+}
+
+.userNav_icon img {
+    width: 37px;
+}
+
+@media screen and (min-width: 768px) {
+    .userNav_icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .userNav_icon img {
+        width: 40px;
+    }   
+}
+
+@media screen and (min-width: 1024px) {
+    .userNav_icon img {
+        width: 45px;
+    }
+}
